@@ -64,7 +64,7 @@ class LogPruner:
         threshold = most_recent - timedelta(minutes=self.__window_minutes)
         pruned_logs = list()
 
-        while self.__timestamps and self.__timestamps[0] < threshold:
+        while self.__timestamps and self.__timestamps[0] <= threshold:
             timestamp: datetime = self.__timestamps.popleft()
             if timestamp in logs_cache:
                 pruned_logs.extend(logs_cache.pop(timestamp))
