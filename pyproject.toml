@@ -1,0 +1,18 @@
+[project]
+name = "rapidlogs"
+version = "0.1.0"
+description = "Sistema de gestión de logs de alto rendimiento."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.12",
+    "sortedcontainers>=2.4.0",
+    "uvicorn>=0.34.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pre-commit>=4.2.0",
+]
