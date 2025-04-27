@@ -123,7 +123,7 @@ class API:
         """
         assert isinstance(logs, LogEntry | LogList), "Invalid input type"
 
-        log_list: list[LogEntry] = list(logs) if isinstance(logs, LogEntry) else logs.logs
+        log_list: list[LogEntry] = [logs] if isinstance(logs, LogEntry) else logs.logs
 
         for log_entry in log_list:
             print(log_entry)
