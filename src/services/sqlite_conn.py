@@ -85,7 +85,7 @@ class SQliteConn:
 
         with connect(self.__db_path) as conn:
             try:
-                logs = list(logs) if not isinstance(logs, list) else logs
+                logs = [logs] if not isinstance(logs, list) else logs
 
                 insert_query: str = self.INSERT_LOG_QUERY.format(self.__logs_table)
                 conn.executemany(
